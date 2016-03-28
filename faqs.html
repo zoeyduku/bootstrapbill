@@ -1,0 +1,319 @@
+<!doctype html>
+<html>
+<head>
+  <title>Bootstrap Case</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/bootstrap-theme-coolheat.css">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  
+  <script src="js/npm.js"></script>
+  <script src="js/bootstrap.js"></script>
+  
+  <!--Accordion Javascript-->
+	<script type="text/javascript">
+  $(document).ready(function($) {
+    $('#accordion').find('.accordion-toggle').click(function(){
+
+      //Expand or collapse this panel
+      $(this).next().slideToggle('fast');
+
+      //Hide the other panels
+      $(".accordion-content").not($(this).next()).slideUp('fast');
+
+    });
+  });
+</script><!--Accordion Javascript-->
+
+  
+  
+  
+  <style>
+<!--Dropdown Menu-->
+.dropdownmenu {
+    position: relative;
+    display: inline-block;
+	font-size: 10px;
+	}
+
+.dropbtnmenu {
+    display: none;
+    position: absolute;
+	font-size:12px;
+    background-color: #f9f9f9;
+	width: 200%;
+    min-width: 50px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	overflow: visibile;
+	text-align: left; }
+	
+.dropdownmenu-content {
+    display: none;
+    position: absolute;
+	font-size:12px;
+    background-color: #f9f9f9;
+	width: 200%;
+    min-width: 50px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	overflow: visibile;
+	text-align: left; }
+
+.dropbtnmenu a {
+    color: black;
+    padding: 0px 5px;
+    text-decoration: none;
+    display: block;
+	overflow: visibile;
+	text-align: left;
+	font-size:12px; }
+	
+.dropdownmenu-content li a {
+    color: black;
+    padding: 0px 5px;
+    text-decoration: none;
+    display: block;
+	overflow: visibile;
+	text-align: left;
+	font-size:14px; }
+
+.dropbtnmenu a:hover {background-color: #f1f1f1}
+.dropdownmenu-content a:hover {background-color: #f1f1f1}
+
+	
+.dropdownmenu:hover .dropdownmenu-content {
+    display: block;
+	overflow: visibile;
+	text-align: center;
+	font-size:12px;}
+
+
+.dropdownmenu-content a:hover .dropbtnmenu {
+    display: block;
+	overflow: visibile;
+	text-align: center;
+	font-size:12px;}<!--Dropdown Menu-->
+
+
+<!--Accordion CSS-->
+.accordion-toggle {cursor: pointer;}
+.accordion-content {display: none;}
+.accordion-content.default {display: block;}<!--Accordion CSS-->
+
+</style>
+  
+</head>
+<body>
+
+
+
+<div class="container" style=" max-width:400px;" >
+  
+  
+
+    <div class="panel panel-primary" >
+		
+		<div class="text-left navbar-fixed-top panel-heading" >
+		<h4>
+			<strong>Frequently Asked Questions</strong>
+		
+		
+		
+	
+	
+		
+			<a class=" glyphicon glyphicon-remove" style="color:#fff; margin-left:20%;" ></a>
+			
+			
+		
+		</h4>
+		</div>
+      
+	  <div class=" panel-heading" id="accordion"><h4><strong>Frequently Asked Questions</strong></h4></div>
+	  
+	  
+		<!--Accordion 1-->
+		<a id="accordion-1" class="anchor"></a>
+		<div class="panel panel-primary">
+					<!--Question-->
+			<div class="panel-heading">
+				<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse1" ><strong>Why CoolHeat Comfort?</strong></a></h4>
+			</div>
+					<!--Answer-->
+			<div id="collapse1" class="panel-collapse collapse">
+				<div class="panel-body">Our local family run business offers exceptional customer service as well as quality brand name products. Our Comfort Technicians will guide you through the whole process. From assessing your Comfort needs; to installing your Comfort System; to registering your warranty. Your Comfort Specialist will instruct you on proper Service & Maintenance of your equipment so it'll run at optimum efficiency for years to come. When you choose CoolHeat we are there with you for the life of your Comfort System and beyond.	
+				</div>
+			</div>
+		</div>
+		
+				<!--Accordion 2-->
+		<a id="accordion-2" class="anchor"></a>
+		<div class="panel panel-default">
+					<!--Question-->
+			<div class="panel-heading">
+				<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse2" ><strong>What is your 10-Year Warranty?</strong></a></h4>
+			</div>
+					<!--Answer-->
+			<div id="collapse2" class="panel-collapse collapse">
+				<div class="panel-body">Coolheat offers the best warranties in the HVAC business. Our 10 year Parts & Labour Warranty will have you sleeping comfortably for years to come.  Our professionally trained Comfort Technicians will guide you through other warranties available for your Comfort Systems during your free energy consultation.	
+				</div>
+			</div>
+		</div>
+		
+		
+				<!--Accordion 3-->
+		<a id="accordion-3" class="anchor"></a>
+		<div class="panel panel-default">
+					<!--Question-->
+			<div class="panel-heading">
+				<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse3" ><strong>What are the benefits of installing a Humidifier?</strong></a></h4>
+			</div>
+					<!--Answer-->
+			<div id="collapse3" class="panel-collapse collapse">
+				<div class="panel-body">Most of the tissue in our bodies is composed of water. When we lose water our skin dries up and the symptoms of dehydration begin to show including chronic joint and muscle pain, raspy throat, sore eyes and lack of mental concentration. The same goes for musicians and their instruments; if the humidity isn't properly maintained then their instruments will begin to warp and crack. The most common way to combat dehydration is to drink a lot of water. The other, less common method is to maintain the relative humidity in your home with a Furnace Humidifier. Ask our CoolHeat Comfort Technicians how to optimize the relative humidity in your home.
+				</div>
+			</div>
+		</div>
+		
+		
+				<!--Accordion 4-->
+		<a id="accordion-4" class="anchor"></a>
+		<div class="panel panel-default">
+					<!--Question-->
+			<div class="panel-heading">
+				<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse4" ><strong>What does AFUE stand for?</strong></a></h4>
+			</div>
+					<!--Answer-->
+			<div id="collapse4" class="panel-collapse collapse">
+				<div class="panel-body">There are special names for the efficiency ratings of various types of equipment. Furnaces are rated according to their Annual Fuel Utilization Efficiency, or AFUE. The higher the AFUE rating, the more efficient the unit.
+				</div>
+			</div>
+		</div>
+		
+
+		
+				<!--Accordion 5-->
+		<a id="accordion-5" class="anchor"></a>
+		<div class="panel panel-default">
+					<!--Question-->
+			<div class="panel-heading">
+				<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse5" ><strong>What rebates are available for furnaces?</strong></a></h4>
+			</div>
+					<!--Answer-->
+			<div id="collapse5" class="panel-collapse collapse">
+				<div class="panel-body">Rebates for a new Furnace depends on the type of Heating System you're installing. By installing a new Comfort System you can qualify for a rebate from the Ontario Power Authority. Please <a href="#take-action" target="_self">contact us</a> for a free energy consultation for more information.
+				</div>
+			</div>
+		</div>
+		
+				<!--Accordion 6-->
+		<a id="accordion-6" class="anchor"></a>
+		<div class="panel panel-default">
+					<!--Question-->
+			<div class="panel-heading">
+				<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse6" ><strong>What type of furnaces do you install?</strong></a></h4>
+			</div>
+					<!--Answer-->
+			<div id="collapse6" class="panel-collapse collapse">
+				<div class="panel-body">We sell a full range of furnaces from single stage, dual stage and modulating furnaces. Our experts will assist you in choosing the correct furnace for your home that will provide you and your family long term comfort while reducing the energy consumption to save you money on your energy bills.
+				</div>
+			</div>
+		</div>
+		
+				<!--Accordion 7-->
+		<a id="accordion-7" class="anchor"></a>
+		<div class="panel panel-default">
+					<!--Question-->
+			<div class="panel-heading">
+				<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse7" ><strong>What can I save by upgrading my Furnace?</strong></a></h4>
+			</div>
+					<!--Answer-->
+			<div id="collapse7" class="panel-collapse collapse">
+				<div class="panel-body">Savings will depend on your current Furnace and the new system being installed. One thing is sure; installing a new, energy efficient Furnace will reduce your energy costs. Contact our local Comfort Experts for advice on the best Furnace for your home.
+				</div>
+			</div>
+		</div>
+		
+						
+						<!--Accordion 8-->
+		<a id="accordion-8" class="anchor"></a>
+		<div class="panel panel-default">
+				<!--Question-->
+			<div class="panel-heading">
+				<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse8" ><strong>Why CoolHeat Comfort?</strong></a></h4>
+			</div>
+				<!--Answer-->
+			<div id="collapse8" class="panel-collapse collapse">
+				<div class="panel-body">Our local family run business offers exceptional customer service as well as quality brand name products. Our Comfort Technicians will guide you through the whole process. From assessing your Comfort needs; to installing your Comfort System; to registering your warranty. Your Comfort Specialist will instruct you on proper Service & Maintenance of your equipment so it'll run at optimum efficiency for years to come. When you choose CoolHeat we are there with you for the life of your Comfort System and beyond.	
+				</div>
+			</div>
+		</div>
+		
+						<!--Accordion 9-->
+		<a id="accordion-9" class="anchor"></a>
+		<div class="panel panel-default">
+				<!--Question-->
+			<div class="panel-heading">
+				<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse9" ><strong>What type of Warranties are available for Boilers?</strong></a></h4>
+			</div>
+				<!--Answer-->
+			<div id="collapse9" class="panel-collapse collapse">
+				<div class="panel-body">CoolHeat offers the best warranties in the HVAC business. Our Parts & Labour Warranty is second to none and will have you sleeping easy for years to come. Ask our team of professionally trained Comfort Technicians about Warranties from CoolHeat. Afterall, everyone's Comfort needs are different.	
+				</div>
+			</div>
+		</div>
+		
+
+		
+						<!--Accordion 10-->
+		<a id="accordion-10" class="anchor"></a>
+		<div class="panel panel-default">
+				<!--Question-->
+			<div class="panel-heading">
+				<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse10" ><strong>What type of Boilers do you install?</strong></a></h4>
+			</div>
+				<!--Answer-->
+			<div id="collapse10" class="panel-collapse collapse">
+				<div class="panel-body">We offer a full range of Boilers from simple setups to full conversions. Our Comfort Experts will assist you in choosing the correct boiler for your home. Provide your family with long term comfort while reducing your home's energy costs. Ask out Comfort Technicians how you can reduce the price of your energy bills.
+				</div>
+			</div>
+		</div>
+		
+						<!--Accordion 11-->
+		<a id="accordion-11" class="anchor"></a>
+		<div class="panel panel-default">
+				<!--Question-->
+			<div class="panel-heading">
+				<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse11" ><strong>What can I save by upgrading my Boiler?</strong></a></h4>
+			</div>
+				<!--Answer-->
+			<div id="collapse11" class="panel-collapse collapse">
+				<div class="panel-body">Savings will depend on your current system and the new system being installed. One thing is sure; installing a new, energy efficient boiler will reduce your energy costs. Contact our Local Comfort Experts for advice on the best boiler for your home.
+				</div>
+			</div>
+		</div>
+					
+	</div>				
+					
+	<br>
+	
+	<!--More Questions?-->
+	<div class="row">
+		<div class="col-sm-12 text-center">
+			<h5>Still have questions? <a href="mailto:info@coolheatcomfort.ca">Let us know how we can help you.</a></h5>
+		</div>
+	</div>
+
+	<div class="panel-body">Panel Content</div>
+    </div>
+	
+	
+    <!----------------------->
+  
+
+
+
+</body>
+
+</html>
