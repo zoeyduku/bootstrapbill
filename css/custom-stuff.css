@@ -182,8 +182,8 @@
 	font-size:3em; 
 	font-family:Arial, Helvetica, sans-serif;
 	text-align:center;
-	-webkit-text-shadow: 0 5px 15px rgba(0, 0, 0, .5);
-            text-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+	-webkit-text-shadow: 0 5px 15px rgba(0, 0, 0, .2);
+            text-shadow: 0 5px 15px rgba(0, 0, 0, .2);
 }
 
 .fonts-titles-sm{
@@ -192,8 +192,8 @@
 	font-size:2em; 
 	font-family:Arial, Helvetica, sans-serif;
 	text-align:center;
-	-webkit-text-shadow: 0 5px 15px rgba(0, 0, 0, .5);
-            text-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+	-webkit-text-shadow: 0 5px 15px rgba(0, 0, 0, .2);
+            text-shadow: 0 5px 15px rgba(0, 0, 0, .2);
 }
 
 .fonts-titles-ssm{
@@ -202,8 +202,17 @@
 	font-size:1.2em; 
 	font-family:Arial, Helvetica, sans-serif;
 	text-align:center;
-	-webkit-text-shadow: 0 5px 15px rgba(0, 0, 0, .5);
-            text-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+	-webkit-text-shadow: 0 5px 15px rgba(0, 0, 0, .2);
+            text-shadow: 0 5px 15px rgba(0, 0, 0, .2);
+}
+.fonts-titles-ssm2{
+	padding-bottom:10px;
+	font-weight:bold;
+	font-size:1.2em; 
+	font-family:Arial, Helvetica, sans-serif;
+	text-align:center;
+	-webkit-text-shadow: 0 5px 15px rgba(0, 0, 0, .2);
+            text-shadow: 0 5px 15px rgba(0, 0, 0, .2);
 }
 
 
@@ -213,8 +222,17 @@
 	padding-top:10px; 
 	font-size:1.4em;
 	font-family:Arial, Helvetica, sans-serif;
-	-webkit-text-shadow: 0 5px 15px rgba(0, 0, 0, .5);
-            text-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+	-webkit-text-shadow: 0 5px 15px rgba(0, 0, 0, .2);
+            text-shadow: 0 5px 15px rgba(0, 0, 0, .2);
+	
+}
+
+.fonts-body2 {
+	text-align:center;
+	padding-top:10px; 
+	font-size:1em;
+	font-family:Arial, Helvetica, sans-serif;
+	
 	
 }
 
@@ -223,8 +241,8 @@
 	padding-top:10px; 
 	font-size:.9em;
 	font-family:Arial, Helvetica, sans-serif;
-	-webkit-text-shadow: 0 5px 15px rgba(0, 0, 0, .5);
-            text-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+	-webkit-text-shadow: 0 5px 15px rgba(0, 0, 0, .2);
+            text-shadow: 0 5px 15px rgba(0, 0, 0, .2);
 	
 }
 
@@ -242,8 +260,8 @@
 	padding-top:10px;	
 	font-size:1.3em;
 	font-family:Arial, Helvetica, sans-serif;
-	-webkit-text-shadow: 0 5px 15px rgba(0, 0, 0, .5);
-            text-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+	-webkit-text-shadow: 0 5px 15px rgba(0, 0, 0, .2);
+            text-shadow: 0 5px 15px rgba(0, 0, 0, .2);
 	
 }
 

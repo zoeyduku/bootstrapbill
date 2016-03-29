@@ -28,12 +28,111 @@
  
  
  
+ <!--Parallax JS-->
+ <script>
+$(document).ready(function(){
+   // cache the window object
+   $window = $(window);
  
+   $('section[data-type="background"]').each(function(){
+     // declare the variable to affect the defined data-type
+     var $scroll = $(this);
+                     
+      $(window).scroll(function() {
+        // HTML5 proves useful for helping with creating JS functions!
+        // also, negative value because we're scrolling upwards                             
+        var yPos = -($window.scrollTop() / $scroll.data('speed')); 
+         
+        // background position
+        var coords = '50% '+ yPos + 'px';
  
+        // move the background
+        $scroll.css({ backgroundPosition: coords });    
+      }); // end window scroll
+   });  // end section function
+}); // close out script
+</script> <!--Parallax JS-->
  
  
 
-  
+  <style>
+#repairs { 
+    background: url(img/bg-frust.png) 50% 0 fixed; 
+    height: auto;  
+    margin: 0 auto; 
+    width: 100%; 
+    position: relative; 
+    box-shadow: 0 0 50px rgba(0,0,0,0.8);
+    padding: 200px 0;
+	overflow:hidden;
+}
+#aboutus { 
+    background: url(
+	
+	
+	
+	
+	) 50% 0 fixed; 
+    height: auto;  
+    margin: 0 auto; 
+    width: 100%; 
+    position: relative; 
+    box-shadow: 0 0 50px rgba(0,0,0,0.8);
+    padding: 200px 0;
+	overflow:hidden;
+}
+
+#types { 
+    background: url(img/bg-frust.png) 50% 0 fixed; 
+    height: auto;  
+    margin: 0 auto; 
+    width: 100%; 
+
+     
+    box-shadow: 0 0 50px rgba(0,0,0,0.8);
+   
+	overflow:hidden;
+}
+#maintenance { 
+    background: url(img/bg-happs.png) 50% 0 fixed; 
+    height: auto;  
+    margin: 0 auto; 
+    width: 100%; 
+	
+     
+    box-shadow: 0 0 50px rgba(0,0,0,0.8);
+   
+	overflow:hidden;
+}
+
+#footer { 
+    background: url(
+	
+	
+	
+	 
+	 
+	) 50% 0 fixed; 
+    height: auto;  
+    margin: 0 auto; 
+    width: 100%; 
+    position: relative; 
+    box-shadow: 0 0 50px rgba(0,0,0,0.8);
+    
+	overflow:hidden;
+}
+#climatetypes { 
+    background: url(img/real-comfort.png) 50% 0 fixed; 
+    height: auto;  
+    margin: 0 auto; 
+    width: 100%; 
+    position: relative; 
+    box-shadow: 0 0 50px rgba(0,0,0,0.8);
+    padding: 200px 0;
+	overflow:hidden;
+}
+
+</style>
   
   
   
@@ -61,51 +160,32 @@
 </head>
 
 <!--Navbars & Buttons-->
-<body>
+<body width="100%">
 
-<!--Navbar-->
+<!--MAIN Navbar-->
 <nav class="navbar navbar-default navbar-fixed-top" >
   <div class="container-fluid">
+	
+	<!--Nav Collapse Buttons-->
 	<div class="navbar-header">
 	
-	<span>
-	<!--Collapse btn-->
+	<!--SMARTPHONE Navbar Collapse btn-->
 	  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" style="margin-top:20px;">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button><!--Collapse btn-->
 	  
-	  </span>
 	  
 	  
+	  <!--Emergency Contact Button-->
 	  
+	  <button type="button" id="myBtn3" class="btn btn-danger navbar-toggle2 nav-btn-font2" data-toggle="collapse" data-target="#myModal3" style="margin-top:14px; padding:10px; border-radius: 30px;position:relative;">
+        <span class="glyphicon glyphicon-exclamation-sign"></span><strong> 24/7 Emergency Repairs </strong>                        
+      </button><!--Emergency Contect Button-->
 	  
 	  
 	
-	  
-	  
-	  
-	 
-	   <span>
-	  
-	  <!--Logo-->
-      <a class="navbar-brand" href="index.html"><img style="max-height:150%;" src="img/logo-coolheat-943x412.png"/></a><!--Logo-->
-    
-	
-	 </span>
-	
-	
-	
-	
-	<div class="navbar-right">
-	
-	 <span>
-	  	<!--Emergency Contact Button-->
-<!-- Trigger/Open The Modal -->	
-<button type="button" id="myBtn3" class="btn btn-danger dropdown-toggle nav-btn-font2 navbar-right navbar-toggle2" href="#myModal3"  style="margin-top:14px;  padding:10px; border-radius: 30px;"><span class="glyphicon glyphicon-exclamation-sign"></span><strong> 24/7 Emergency Repairs </strong>
-<span class="glyphicon glyphicon-exclamation"></span></button>
-
 
 <!-- The Modal -->
 <div id="myModal3" class="modal3 " >
@@ -117,8 +197,13 @@
 	
 	<!--HEADER-->
 	<div class="modal-header-red " >
-      <a class="close3">x</a>
+      
+	  <a href="#" class=" fonts-titles-sm " data-toggle="collapse" data-target="#myModal3"
+	  style="color:#fff;float:right;margin-top:10px;"
+	  ><span class="glyphicon glyphicon-remove" ></span></a>
+	  
       <h2 class="text-center">24/7 Emergency Repairs</h2>
+	  
 	  
     </div><!--HEADER-->
     
@@ -173,7 +258,7 @@
 
 	
 	<!--FOOTER-->
-    <footer class="modal-footer-red " >
+    <footer class="text-center modal-footer-red " >
       <h5>Still have questions? <a href="mailto:info@coolheatcomfort.ca" style="color:#fff;">Let us know how we can help you.</a></h5>
     </footer><!--FOOTER-->
 	
@@ -186,25 +271,10 @@
 // Get the modal
 var modal3 = document.getElementById('myModal3');
 
-// Get the button that opens the modalcr
-var btn3 = document.getElementById('myBtn3');
-
-// Get the <span> element that closes the modal
-var span3 = document.getElementsByClassName('close3')[0];
-
-// When the user clicks the button, open the modal 
-btn3.onclick = function() {
-    modal3.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span3.onclick = function() {
-    modal3.style.display = "none";
-}
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event3) {
-    if (event3.target == modal3) {
+window.onclick = function(event) {
+    if (event.target == modal3) {
         modal3.style.display = "none";
     }
 }
@@ -212,23 +282,37 @@ window.onclick = function(event3) {
 
 </div>
 
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	
+	  
+	  <!--Logo-->
+      <a class="navbar-brand" href="index.html"><img style="max-height:150px;" src="img/logo-coolheat-943x412.png"/></a><!--Logo-->
+    
+	
+	
 
-	   </span>
-	
-	</div>
-	
+	  
+	  
 	
 	
+	</div><!--Nav Collapse BUttons-->
 	
 	
+  
+	  
 	
-	</div>
-	
-    <!--Smartphone collapse-->
+	  <!--Smartphone collapse-->
 	<div class="collapse navbar-collapse"  id="myNavbar">
 	
 		<!--Nav Choices-->
-	
 	<ul class="navbar-nav" >
 		
 		<!--Cooling & Heating Tabs-->
@@ -374,25 +458,180 @@ window.onclick = function(event3) {
 	
 	
 	
+	<!--
+	LEFT NAV BAR
+	LEFT NAV BAR
+	LEFT NAV BAR
+	LEFT NAV BAR
+	-->
+	
 	  
 	
 	
+<!--Left Sub Nav Bar-->
+
+<div class="container" >
+  <div class="row" >
+  
+  
+  
+  <!--EDIT THIS STUFF SIDE COLLAPSE BUTTON-->
+  
+  
+
+	
+	
+	
+	
+	
+	<div class=" toggle scroll-spy-stuff" id="myScrollspy2" data-toggle="collapse" data-target="#myScrollspy" style="z-index:9; 
+	
+	
+	
+	
+	">
+      <ul class="nav nav-pills nav-stacked fonts-nav-left center-block" style="margin-left:-10px; margin-top:90px; 
+	  
+	  
+	  border-radius:30px;
+	  border:1px solid;
+	  
+	  background-color:#fff;
+	  overflow:hidden;
+	  padding:0;
+	  z-index:1;
+	  
+	  
+	  
+	  
+	  -webkit-background-clip: padding-box;
+          background-clip: padding-box;
+	
+	-webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+          box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+		  
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+ 
+	  
+	  
+	  ">
+        <li class="active"><a href="#hotfeature"><span class="glyphicon glyphicon-cloud-download"></span></a></li>
+		
+        
+		
+		<section class="nav nav-pills nav-stacked heat-red"><li><a href="#singlestage" ><span class="glyphicon glyphicon-cloud-download"></span></a></li></section>
+        
+		<li><a href="#dualstage" ><span class="glyphicon glyphicon-tint"></span></a></li>
+		
+		<section class="nav nav-pills nav-stacked heat-red"><li><a href="#modulating" ><span class="glyphicon glyphicon-tint"></span></a></li></section>
+		
+		
+		
+		<li><a href="#redtag"><span class="glyphicon glyphicon-cloud"></span></a></li>
+		
+		<li><a href="#air"><span class="glyphicon glyphicon-cloud"></span></a></li>
+		
+		<li><a href="#maintenance" ><span class="glyphicon glyphicon-wrench"></span></a></li>
+		
+		
+		<li><a href="#services"><span class="glyphicon glyphicon-wrench"></span></a></li>
+		
+		<section class="nav nav-pills nav-stacked heat-red"><li><a href="#repairs" ><span class="glyphicon glyphicon-exclamation-sign"></span></a></li></section>
+		
+		
+		<li><a href="#financing"><span class="glyphicon glyphicon-usd"></span></a></li>
+		
+		
+		
+		
+		<li><a href="#about" ><span class="glyphicon glyphicon-user"></span></a></li>
+		
+		
+		
+        
+        
+      </ul>
+    </div>
+	
+	
+	
+	
+
+
+
+<!--EDIT THIS STUFF SIDE COLLAPSE BUTTON-->
+	
+    <div class=" collapse scroll-spy-stuff" id="myScrollspy" style="z-index:10; " >
+      <ul class="nav nav-pills nav-stacked fonts-nav-left center-block" style="margin-left:-15px; margin-top:90px; 
+	  
+	  
+	  border-radius:30px;
+	  border:1px solid;
+	  background-color:#fff;
+	  overflow:hidden;
+	  padding:0;
+	  z-index:10;
+	  
+	  
+	  
+	  
+	  -webkit-background-clip: padding-box;
+          background-clip: padding-box;
+	
+	-webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+          box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+		  
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+	  
+	  ">
+        <li class="active collapse"><a href="#hotfeature"><span class="glyphicon glyphicon-cloud-download"data-toggle="collapse" data-target="#myScrollspy"></span> Hot Feature</a></li>
+        
+		
+        
+		<li><a href="#singlestage" ><span class="glyphicon glyphicon-cloud-download"data-toggle="collapse" data-target="#myScrollspy"></span> Single Stage</a></li>
+		
+		<section class="nav nav-pills nav-stacked heat-red"><li><a href="#dualstage" ><span class="glyphicon glyphicon-tint"data-toggle="collapse" data-target="#myScrollspy"></span> Dual Stage</a></li></section>
+		
+		<section class="nav nav-pills nav-stacked heat-red"><li><a href="#modulating" ><span class="glyphicon glyphicon-tint"data-toggle="collapse" data-target="#myScrollspy"></span> Modulating</a></li></section>
+		
+		<li><a href="#redtag" ><span class="glyphicon glyphicon-cloud"data-toggle="collapse" data-target="#myScrollspy"></span> Red Tag</a></li>
+		
+		
+		<li><a href="#air" ><span class="glyphicon glyphicon-cloud"data-toggle="collapse" data-target="#myScrollspy"></span> Air Quality</a></li>
+		
+		
+		<li><a href="#maintenance" ><span class="glyphicon glyphicon-wrench"data-toggle="collapse" data-target="#myScrollspy"></span> Maintenance</a></li>
+		
+		
+		<li><a href="#services"><span class="glyphicon glyphicon-wrench"data-toggle="collapse" data-target="#myScrollspy"></span> Services</a></li>
+		
+		<section class="nav nav-pills nav-stacked heat-red"><li><a href="#repairs" ><span class="glyphicon glyphicon-exclamation-sign"data-toggle="collapse" data-target="#myScrollspy"></span> Repairs</a></li></section>
+		
+		
+		<li><a href="#financing" ><span class="glyphicon glyphicon-user"data-toggle="collapse" data-target="#myScrollspy"></span> Financing</a></li>
+		
+		<li><a href="#about" ><span class="glyphicon glyphicon-user"data-toggle="collapse" data-target="#myScrollspy"></span> About Us</a></li>
+		
+		
+		
+        
+        
+      </ul>
+    </div>
 	
 	
 	
   </div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  </div>
   
 </nav><!--Navbar-->
+
+
+
+
+
+
+
 
 
 <!--FAQs & Contact Bar-->
@@ -403,7 +642,9 @@ window.onclick = function(event3) {
 
 	<!--FAQs Button-->
 <!-- Trigger/Open The Modal -->	
-<button id="myBtn" class="btn btn-primary dropdown-toggle nav-btn-font2 navbar-right" href="#myModal"  ><strong> FAQs </strong>
+<button type="button" id="myBtn" class="btn btn-primary navbar-toggle2 nav-btn-font2 navbar-right" data-toggle="collapse" data-target="#myModal" style="margin-top:14px; padding:10px; border-radius: 30px;position:relative;">
+
+<strong> FAQs </strong>
 <span class="glyphicon glyphicon-search"></span></button>
 
 
@@ -417,7 +658,9 @@ window.onclick = function(event3) {
 	
 	<!--HEADER-->
 	<nav class="modal-header " style="">
-      <a class="close">x</a>
+      <a href="#" class=" fonts-titles-sm " data-toggle="collapse" data-target="#myModal"
+	  style="color:#fff;float:right;margin-top:10px;"
+	  ><span class="glyphicon glyphicon-remove" ></span></a>
       <h3>Frequently Asked Questions</h3>
     </nav><!--HEADER-->
     
@@ -428,21 +671,21 @@ window.onclick = function(event3) {
       
 	  <!--Accordion 1-->
 		<a id="accordion-1" class="anchor"></a>
-		<div class="panel panel-primary" style="border:0px;">
+		<div class="panel panel-primary">
 					<!--Question-->
 			<div class="panel-heading">
 				<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse1" ><strong>Why CoolHeat Comfort?</strong></a></h4>
 			</div>
 					<!--Answer-->
 			<div id="collapse1" class="panel-collapse collapse">
-				<div class="panel-body">Our local family run business offers exceptional customer service as well as quality brand name products. Our Comfort Technicians will guide you through the whole process. From assessing your Comfort needs; to installing your Comfort System; to registering your warranty. Your Comfort Specialist will instruct you on proper Service & Maintenance of your equipment so it'll run at optimum efficiency for years to come. When you choose CoolHeat we are there with you for the life of your Comfort System and beyond.	
+				<div class="panel-body">Our local family run business offers exceptional customer service as well as quality brand name products. Our Comfort Technicians will guide you through the whole process. From assessing your Comfort needs; to installing your Comfort System; to registering your warranty. Your Comfort Specialist will instruct you on proper Service & Maintenance of your equipment so it'll run at optimum efficiency for years to come. When you choose CoolHeat we are there with you for the life of your Comfort System and beyond.
 				</div>
 			</div>
 		</div>
 		
 				<!--Accordion 2-->
 		<a id="accordion-2" class="anchor"></a>
-		<div class="panel panel-primary" style="border:0px;">
+		<div class="panel panel-primary">
 					<!--Question-->
 			<div class="panel-heading">
 				<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse2" ><strong>What is your 10-Year Warranty?</strong></a></h4>
@@ -457,7 +700,7 @@ window.onclick = function(event3) {
 		
 				<!--Accordion 3-->
 		<a id="accordion-3" class="anchor"></a>
-		<div class="panel panel-primary" style="border:0px;">
+		<div class="panel panel-primary">
 					<!--Question-->
 			<div class="panel-heading">
 				<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse3" ><strong>What are the benefits of installing a Humidifier?</strong></a></h4>
@@ -472,7 +715,7 @@ window.onclick = function(event3) {
 		
 				<!--Accordion 4-->
 		<a id="accordion-4" class="anchor"></a>
-		<div class="panel panel-primary" style="border:0px;">
+		<div class="panel panel-primary">
 					<!--Question-->
 			<div class="panel-heading">
 				<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse4" ><strong>What does AFUE stand for?</strong></a></h4>
@@ -488,7 +731,7 @@ window.onclick = function(event3) {
 		
 				<!--Accordion 5-->
 		<a id="accordion-5" class="anchor"></a>
-		<div class="panel panel-primary" style="border:0px;">
+		<div class="panel panel-primary">
 					<!--Question-->
 			<div class="panel-heading">
 				<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse5" ><strong>What rebates are available for furnaces?</strong></a></h4>
@@ -502,7 +745,7 @@ window.onclick = function(event3) {
 		
 				<!--Accordion 6-->
 		<a id="accordion-6" class="anchor"></a>
-		<div class="panel panel-primary" style="border:0px;">
+		<div class="panel panel-primary">
 					<!--Question-->
 			<div class="panel-heading">
 				<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse6" ><strong>What type of furnaces do you install?</strong></a></h4>
@@ -516,7 +759,7 @@ window.onclick = function(event3) {
 		
 				<!--Accordion 7-->
 		<a id="accordion-7" class="anchor"></a>
-		<div class="panel panel-primary" style="border:0px;">
+		<div class="panel panel-primary">
 					<!--Question-->
 			<div class="panel-heading">
 				<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse7" ><strong>What can I save by upgrading my Furnace?</strong></a></h4>
@@ -531,7 +774,7 @@ window.onclick = function(event3) {
 						
 						<!--Accordion 8-->
 		<a id="accordion-8" class="anchor"></a>
-		<div class="panel panel-primary" style="border:0px;">
+		<div class="panel panel-primary">
 				<!--Question-->
 			<div class="panel-heading">
 				<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse8" ><strong>Why CoolHeat Comfort?</strong></a></h4>
@@ -545,7 +788,7 @@ window.onclick = function(event3) {
 		
 						<!--Accordion 9-->
 		<a id="accordion-9" class="anchor"></a>
-		<div class="panel panel-primary" style="border:0px;">
+		<div class="panel panel-primary">
 				<!--Question-->
 			<div class="panel-heading">
 				<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse9" ><strong>What type of Warranties are available for Boilers?</strong></a></h4>
@@ -561,7 +804,7 @@ window.onclick = function(event3) {
 		
 						<!--Accordion 10-->
 		<a id="accordion-10" class="anchor"></a>
-		<div class="panel panel-primary" style="border:0px;">
+		<div class="panel panel-primary">
 				<!--Question-->
 			<div class="panel-heading">
 				<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse10" ><strong>What type of Boilers do you install?</strong></a></h4>
@@ -575,7 +818,7 @@ window.onclick = function(event3) {
 		
 						<!--Accordion 11-->
 		<a id="accordion-11" class="anchor"></a>
-		<div class="panel panel-primary" style="border:0px;">
+		<div class="panel panel-primary">
 				<!--Question-->
 			<div class="panel-heading">
 				<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapse11" ><strong>What can I save by upgrading my Boiler?</strong></a></h4>
@@ -609,21 +852,6 @@ window.onclick = function(event3) {
 // Get the modal
 var modal = document.getElementById('myModal');
 
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-    modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
-}
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
@@ -640,7 +868,9 @@ window.onclick = function(event) {
 
 	<!--Contact Button-->
 <!-- Trigger/Open The Modal -->	
-<button id="myBtn2" class="btn btn-primary dropdown-toggle nav-btn-font2 navbar-left" href="#myModal2"  ><strong> Contact </strong>
+<button type="button" id="myBtn2" class="btn btn-primary navbar-toggle2 nav-btn-font2 navbar-left" data-toggle="collapse" data-target="#myModal2" style="margin-top:14px; padding:10px; border-radius: 30px;position:relative;">
+
+<strong> Contact </strong>
 <span class="glyphicon glyphicon-phone"></span></button>
 
 
@@ -654,7 +884,9 @@ window.onclick = function(event) {
 	
 	<!--HEADER-->
 	<div class="modal-header " >
-      <a class="close2">x</a>
+      <a href="#" class=" fonts-titles-sm " data-toggle="collapse" data-target="#myModal2"
+	  style="color:#fff;float:right;margin-top:10px;"
+	  ><span class="glyphicon glyphicon-remove" ></span></a>
       <h1 class="text-center">Contact Us</h1>
 	  
     </div><!--HEADER-->
@@ -723,25 +955,11 @@ window.onclick = function(event) {
 // Get the modal
 var modal2 = document.getElementById('myModal2');
 
-// Get the button that opens the modalcr
-var btn2 = document.getElementById('myBtn2');
 
-// Get the <span> element that closes the modal
-var span2 = document.getElementsByClassName('close2')[0];
-
-// When the user clicks the button, open the modal 
-btn2.onclick = function() {
-    modal2.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span2.onclick = function() {
-    modal2.style.display = "none";
-}
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event2) {
-    if (event2.target == modal2) {
+window.onclick = function(event) {
+    if (event.target == modal2) {
         modal2.style.display = "none";
     }
 }
@@ -753,19 +971,15 @@ window.onclick = function(event2) {
   </div>
 </nav><!--FAQs & Contact Bar-->
 
-</body>
 
 
 
-<body data-spy="scroll" data-target="#myScrollspy"  style="position:relative;margin:0; width;100%; padding:0;">
-
-
-
+</body><!--Navbars & Buttons-->
 
 
 
 
-
+<body data-spy="scroll" data-target=".scroll-spy-stuff" data-offset="20" style="overflow:auto; margin:0px; width:100%;padding:0px;    position:relative; ">
 
 
 
@@ -774,51 +988,18 @@ window.onclick = function(event2) {
 
 
 
-
-
-
-
-
-<div class="container" >
-  <div class="row" style="width:100%; margin:0 auto; padding:0 auto;">
-    <div class="col-sm-1 " id="myScrollspy" >
-      <ul class="nav nav-pills nav-stacked fonts-nav-left" style="margin-left:-20px; margin-top:100px; ">
-        <li class="active"><a href="#waterfeature"><span class="glyphicon glyphicon-cloud-download"></span> Feature</a></li>
-        
-		<section class="nav nav-pills nav-stacked heat-red" ><li><a href="#tankless" ><span class="glyphicon glyphicon-cloud-download"></span> Tankless</a></li></section>
-        
-		<li><a href="#tanks" ><span class="glyphicon glyphicon-cloud-download"></span> Tanks</a></li>
-		
-		<section class="nav nav-pills nav-stacked energy-green"><li><a href="#air" ><span class="glyphicon glyphicon-cloud"></span> Air Quality</a></li></section>
-		
-		<li><a href="#maintenance"><span class="glyphicon glyphicon-wrench"></span> Maintenance</a></li>
-		
-		<section class="nav nav-pills nav-stacked heat-red"><li><a href="#repairs" ><span class="glyphicon glyphicon-exclamation-sign"></span> Repairs</a></li></section>
-		
-		<section class="nav nav-pills nav-stacked energy-green"><li><a href="#financing" ><span class="glyphicon glyphicon-usd"></span> Financing</a></li></section>
-		
-		<li><a href="#hotstuff" ><span class="glyphicon glyphicon-plus-sign"></span> Cool Stuff</a></li>
-		
-		
-		
-        
-        </li>
-      </ul>
-    </div>
     
-<div class="container" style="overflow:none; ">
+<div class="container" style="overflow:none; margin:0px; width:100%;padding-right:0px;padding-top:80px;  left:-15px; padding-bottom:2px;  position:relative; ">
 	<div class="row">
 	
-	<div class="col-sm-10 " style="padding-top:80px;   width:100%;" >
-      
-	  <div id="coolfeature" class="mainbox-dim bg-primary ">    
+	
+      <!--HOT FEATURE-->  
+	  <div id="hotfeature" class="mainbox-dim bg-primary"style="width:100%; margin:0px;box-shadow: 0 0 50px rgba(0,0,0,0.8);">    
         
 		<div class="col-sm-12" style="padding-bottom:20px;"> 
-		<h1 class="fonts-titles-lg">Less Energy. More Savings.</h1>
-		
-		<a href="acs.html" ><img class="center-block img-responsive" src="img/acs.png"/></a>
-		
-        <p class="fonts-body" style="padding-bottom:30px;">Cool your home this summer by installing a new high efficiency Air Conditioner. We offer Cleaning, Maintenance, & Repairs for all Heating & Cooling Comfort Systems. Ask A CoolHeat Comfort Technician for a free home energy consultation and learn which government rebates and financing options are available now.
+		<h1 class="fonts-titles-lg">Less Confusion, More Power</h1>
+        <p class="fonts-body" style="padding-bottom:30px;">The internet can be a daunting place when researching for a new Heating System. We take the confusion out of buying a new Furnace by supplying you with all the information we have on HVAC Systems. Check our <strong> FAQs </strong>
+<span class="glyphicon glyphicon-search"></span> button below for more information or to submit a question.
 </p>
 		</div>
 		
@@ -829,38 +1010,28 @@ window.onclick = function(event2) {
 <span class="glyphicon glyphicon-search"></span> button below to discover more or the<strong> Contact </strong><span class="glyphicon glyphicon-phone"></span> button to get a hold of a CoolHeat Comfort Technician</p>
 		
       </div>
-	  
-	  </div>
-	  
+      
 	  
 	  
-	  <div class="col-sm-10 " style="  width:100%;" >
 	  
-      <div id="furnaces" class="mainbox-dim bg-primary">    
+	  <!--SINGLE STAGE FURNACES-->  
+	  <div id="singlestage" class=" mainbox-dim bg-danger"style="width:100%; margin:0px;box-shadow: 0 0 50px rgba(0,0,0,0.8);">    
         
-		<div class="col-sm-12" style="padding-bottom:20px;"> 
-		<h1 class="fonts-titles-lg">Simply Heat Your Home</h1>
-        <p class="fonts-body" style="padding-bottom:30px;">Learn the simple tips to optimize your home's energy efficiency. When the time comes to replace your furnace system you want equipment that minimizes costs and delivers dependable comfort for your family season after season.</p>
+		<div class="col-sm-8" style="padding-bottom:20px;"> 
+		<h1 class="fonts-titles-lg">Single Stage Furnaces</h1>
+        <p class="fonts-body" style="padding-bottom:30px;">A Single Stage Furnace operates much like a 16 year old behind the wheel of your car. When the climate in your house reaches the minimum 
+predefined temperature range the Single Stage 
+Furnace shifts into 5th gear and doesn’t let off the gas until it slams on the brakes when your house is warm enough.</p>
 		</div>
 		
 		<div class="col-sm-4" >
 		<a href="furnaces.html" ><img class="img-responsive" src="img/furnaces.png"/></a>
-		<h3 class="fonts-titles-sm">Furnaces</h3>
+		<h3 class="fonts-titles-sm"></h3>
 		
-        <p class="fonts-body">Discover the Energy Saving Power of Dual Stage Furnaces</p>
+        <p class="fonts-body"></p>
 		</div>
 		
-		<div class="col-sm-4">
-		<a href="boilers.html" ><img class="img-responsive" src="img/boilers.png"/></a>
-		<h3 class="fonts-titles-sm">Air Quality</h3>
-        <p class="fonts-body">Learn more about proper Humdity Control.</p>
-		</div>
 		
-		<div class="col-sm-4">
-		<a href="conversions.html" ><img class="img-responsive" src="img/conversions.png"/></a>
-		<h3 class="fonts-titles-sm">Full System Fuel Conversions</h3>
-        <p class="fonts-body" style="padding-bottom:50px; ">Learn how converting your existing Oil or Electric Heating System to Natural Gas or Propane can save your money</p>
-		</div>
 		
 		
         <p class="fonts-body">Want to learn more? Click the<strong> FAQs </strong>
@@ -868,58 +1039,79 @@ window.onclick = function(event2) {
 		
       </div>
 	  
-	  </div>
 	  
 	  
-	  
-      <div id="boilers" class="mainbox-dim ">    
+	<!--DUAL STAGE FURNACES--> 
+	<div id="dualstage" class=" mainbox-dim bg-primary"style="width:100%; margin:0px;box-shadow: 0 0 50px rgba(0,0,0,0.8);">    
         
-		<div class="col-sm-12" style="padding-bottom:20px;"> 
-		<h1 class="fonts-titles-lg" style="padding-bottom:20px;">Hydronic Heating</h1>
-        <p class="fonts-body" style="padding-bottom:30px;">Discover what upgrading your old Boiler Sysem could mean for your energy savings.</p>
+		
+		<div class="col-sm-4" >
+		<a href="furnaces.html" ><img class="img-responsive" src="img/furnaces.png"/></a>
+		<h3 class="fonts-titles-sm"></h3>
+		
+        <p class="fonts-body"></p>
+		</div>
+		
+		
+		<div class="col-sm-8" style="padding-bottom:20px;"> 
+		<h1 class="fonts-titles-lg">Dual Stage Furnaces</h1>
+        <p class="fonts-body" style="padding-bottom:30px;">A Dual Stage Furnace is much more like a mature adult driving your car. When your indoor climate reaches the minimum predifined temperature the first stage ignites and begins to heat your home. If the temperature hasn’t reached its optimimum zone (your temperature setting) within 10 minutes the second stage ignites. It’s a lot like using your 
+forward momemtum in a car to bring you to the stop sign instead of abruptly accelerating and 
+stopping like an audacious 16 year old.</p>
+		</div>
+		
+		
+		
+		
+		
+		
+        <p class="fonts-body">Want to learn more? Click the<strong> FAQs </strong>
+<span class="glyphicon glyphicon-search"></span> button below to discover more or the<strong> Contact </strong><span class="glyphicon glyphicon-phone"></span> button to get a hold of a CoolHeat Comfort Technician</p>
+		
+      </div>
+	
+	
+	  
+	  
+	 
+	 <!--MODULATING STAGE FURNACES-->  
+	  <div id="modulating" class=" mainbox-dim bg-warning"style="width:100%; margin:0px;box-shadow: 0 0 50px rgba(0,0,0,0.8);">    
+        
+		<div class="col-sm-8" style="padding-bottom:20px;"> 
+		<h1 class="fonts-titles-lg">Modulating Furnaces</h1>
+        <p class="fonts-body" style="padding-bottom:30px;">A Modulating Furnace operates exactly like a car on cruise control. Once you set the optimum 
+temperature for your home your Furnace will modulate the flame to keep your house at your perfect temperature.</p>
 		</div>
 		
 		<div class="col-sm-4" >
-		<a href="tankless.html" ><img class="img-responsive" src="img/tankless.png"/></a>
-		<h3 class="fonts-titles-sm">Boilers</h3>
+		<a href="furnaces.html" ><img class="img-responsive" src="img/furnaces.png"/></a>
 		
-        <p class="fonts-body">Learn why new Boilers are considered more energy efficient</p>
+		
+        
 		</div>
 		
-		<div class="col-sm-4">
-		<a href="tanks.html" ><img class="img-responsive" src="img/tanks.png"/></a>
-		<h3 class="fonts-titles-sm">Combi Boilers</h3>
-        <p class="fonts-body">Learn more about Heating your Home and Hot Water with a Combi Boiler</p>
-		</div>
-		
-		<div class="col-sm-4">
-		<a href="combi.html" ><img class="img-responsive" src="img/combi.png"/></a>
-		<h3 class="fonts-titles-sm">Full System Fuel Conversions</h3>
-        <p class="fonts-body" style="padding-bottom:50px; ">Learn how converting your existing Oil or Electric Heating System to Natural Gas or Propane can save your money</p>
-		</div>
+		</br>
 		
 		
         <p class="fonts-body">Want to learn more? Click the<strong> FAQs </strong>
 <span class="glyphicon glyphicon-search"></span> button below to discover more or the<strong> Contact </strong><span class="glyphicon glyphicon-phone"></span> button to get a hold of a CoolHeat Comfort Technician</p>
 		
       </div>
-      <div id="redtag" class="mainbox-dim ">    
+	  
+	  
+	  <!--Red Tag-->
+	  <div id="redtag" class="mainbox-dim bg-primary"style="width:100%; margin:0px;box-shadow: 0 0 50px rgba(0,0,0,0.8);">    
         
 		<div class="col-sm-12" style="padding-bottom:20px;"> 
 		<h1 class="fonts-titles-lg">Suspect your Heating System was prematurely Red Tagged?</h1>
-        <p class="fonts-body" style="padding-bottom:30px;">Get a <strong>Free Second Opinion</strong> from a reliable CoolHeat Comfort Technician!
-				</p>
-				
-				<div class="col-sm-4">
-				</div>
-				
-				<div class="col-sm-4">
-				<a class="btn btn-primary center-block fonts-body" href="redtags.html" target="_self">Learn more about Red Tags</a>
-				</div>
-				
-				<div class="col-sm-4">
-				</div>
+        <p class="fonts-body" style="padding-bottom:30px;">Your Hot Water System is probably the most Get a Free Second Opinion from a reliable CoolHeat Comfort Technician!</p>
 		</div>
+		
+		<div class="col-sm-12" style="padding-bottom:30px;">
+		<a href="tankless.html" ><button class="btn btn-primary center-block fonts-titles-sm " >Learn More About Red Tags</button></a>
+		
+		</div>
+		
 		
 		
 		
@@ -930,257 +1122,598 @@ window.onclick = function(event2) {
 	  
 	  
 	  
-	  
-	  
-	  <div id="air" class="mainbox-dim " >         
+	    
+	  <!--Air Quality-->
+      <div id="air" class="mainbox-dim bg-warning"style="width:100%; margin:0px;box-shadow: 0 0 50px rgba(0,0,0,0.8);">    
         
-		<div class="col-sm-4">
-		<a href="airquality-big.html" ><img class="center-block img-responsive" src="img/airquality-big.png"/></a>
-		</div>
-        
-		<div class="col-sm-8" style="padding-bottom:20px;"> 
+		<div class="col-sm-12" style="padding-bottom:20px;"> 
 		<h1 class="fonts-titles-lg">Breathe Easy with Hospital Grade Air Quality</h1>
-      
-		<p class="fonts-body" style="padding-bottom:30px;">The air in your home is always trying to reach its saturation point and will absorb water wherever it can; even your furniture and wooden instruments. As a result your body, your furniture and your instruments dry out, leaving you more susceptible to physical discomfort and damage to your property. Installing the proper Air Quality System for your home can expand your control over your Comfort Systems preventing dry, ichty skin while reducing the cost of your energy bills.
+		<a href="airquality-big.html" ><img class="center-block img-responsive" src="img/airquality-big.png"/></a>
+        <p class="fonts-body" style="padding-bottom:30px;">The air in your home is always trying to reach its saturation point and will absorb water wherever it can; even your furniture and wooden instruments. As a result your body, your furniture and your instruments dry out, leaving you more susceptible to physical discomfort and damage to your property. Installing the proper Air Quality System for your home can expand your control over your Comfort Systems preventing dry, ichty skin while reducing the cost of your energy bills.
 				</p>
-		
-		</div>
-			
 				
+		</div>
 		
 		
+		
+        <p class="fonts-body">Want to learn more? Click the<strong> FAQs </strong>
+<span class="glyphicon glyphicon-search"></span> button below to discover more or the<strong> Contact </strong><span class="glyphicon glyphicon-phone"></span> button to get a hold of a CoolHeat Comfort Technician</p>
+		
+      </div>
+	  
+	  
+	  <!--MAINTENANCE--> 
+      <div id="maintenance" class="mainbox-dim bg-warning"style="width:100%; margin:0px;box-shadow: 0 0 50px rgba(0,0,0,0.8);">    
+	  
+	  
+	  <script>
+	  
+<!--Regular Maintenance Plans-->
+		function hoverSilver1(element) {
+    element.setAttribute('src', 
+         'img/Badge_Silver_onScrollOver.png'//Replace this part with the new button hover image
+         );
+}
+function unhoverSilver1(element) {
+    element.setAttribute('src', 
+         'img/Badge_Silver.png'//Replace this part with the new button image
+         );
+}
+
+function hoverGold1(element) {
+    element.setAttribute('src', 
+         'img/Badge_Gold_onScrollOver.png'//Replace this part with the new button hover image
+         );
+}
+function unhoverGold1(element) {
+    element.setAttribute('src', 
+         'img/Badge_Gold.png'//Replace this part with the new button image
+         );
+}
+
+function hoverPlatinum1(element) {
+    element.setAttribute('src', 
+         'img/Badge_Platinum_onScrollOver.png'//Replace this part with the new button hover image
+         );
+}
+function unhoverPlatinum1(element) {
+    element.setAttribute('src', 
+         'img/Badge_Platinum.png'//Replace this part with the new button image
+         );
+}
+	  </script>
+	  
+	  
+	  
+	  
+        <!--title-->
+		<div class="col-sm-3">
+		</div>
+		
+		<div class="panel panel-warning col-sm-6 " style="padding:20px;background-color:#efefef;opacity:.8;"> 
+		<h1 class=" fonts-titles-lg" style="padding-bottom:0px;">Preemptive Protection</h1>
+		<h1 class="fonts-titles-ssm" style="padding-bottom:10px;">Don't wait until it's too late! </h1>
+        <p class="fonts-body" style="padding-bottom:20px;">
+				<strong>Sleep Comfortably knowing your Heating and Cooling Systems are being properly maintained by our professionally trained CoolHeat Comfort Techncians.</strong>
+				</p>
+				
+				
+				
+		</div><!--title-->
+		
+		
+		<div class="col-sm-2">
+		</div>
+		
+		
+		
+			<!--Silver-->	
+	<div class="col-sm-4">
+		<img alt="Silver Plan" src="img/Badge_Silver.png" onmouseover="hoverSilver1(this)" onmouseout="unhoverSilver1(this)" class="center-block img-responsive" style="max-height:300px;"/>
+				
+			<div class="panel " style="margin:0px; border-color:#898989;">
+				
+				<h1 class="panel-heading fonts-titles-sm" style="padding-bottom:10px;background-color:#898989;color:white;"><strong>Silver</strong></h1>
+				
+				<p class="panel-body fonts-body2" style="padding-bottom:20px;margin:0px;border-color:#898989;border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;"><strong>
+				Full Maintenance
+				</br>
+				Diagnostic Report
+				</br>
+				Safety Inspection
+				</br>
+				Guaranteed 24 hour Priority Service
+				</strong></p>
+			<p class="panel-footer fonts-body-ssm" style="background-color:#898989;margin:0px;color:#fff;">No preinspection required</p>
+			</div>
+	</div><!--Silver-->
+		
+		<!--Gold-->
+	<div class="col-sm-4">
+		<img alt="Gold Plan" src="img/Badge_Gold.png" onmouseover="hoverGold1(this)" onmouseout="unhoverGold1(this)" class="center-block img-responsive" style="max-height:300px;"/>
+				
+			<div class="panel " style="margin:0px; border-color:#f7ec25;padding:0px; width:100%;">
+				
+				<h1 class="panel-heading fonts-titles-sm" style="padding-bottom:10px;background-color:#f7ec25;color:#555;border-color:#f7ec25;margin:0px;">Gold*</h1>
+				
+				<p class="panel-body fonts-body2" style="padding-bottom:20px;margin:0px;border-color:#f7ec25;border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;">
+				<strong>Full Maintenance
+				</br>
+				Diagnostic Report
+				</br>
+				Safety Inspection
+				</br>
+				50% off Labour
+				</br>
+				10% off New Equipment Purchases
+				</br>
+				20% off Replacement Parts
+				</br>
+				Guaranteed 24 hour Priority Service
+				</strong></p>
+				<p class="panel-footer fonts-body-ssm" style="background-color:#f7ec25;margin:0px;color:#555;">*subject to preinspection</p>
+				
+			</div>
+	</div><!--Gold-->
+				
+				<!--Platinum-->
+	<div class="col-sm-4">
+		<img alt="Platinum Plan" src="img/Badge_Platinum.png" onmouseover="hoverPlatinum1(this)" onmouseout="unhoverPlatinum1(this)" class="center-block img-responsive" style="max-height:300px;"/>
+				
+			<div class="panel panel-primary" style="margin:0px;">
+				
+				
+				<h1 class="panel-heading fonts-titles-sm" style="padding-bottom:10px;">Platinum*</h1>
+				
+				<p class="panel-body fonts-body2" style="padding-bottom:20px;margin:0px;border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;"><strong>
+				Full Maintenance
+				</br>
+				Diagnostic Report
+				</br>
+				Safety Inspection
+				</br>
+				Free Labour!
+				</br>
+				20% off New Equipment Purchases
+				</br>
+				20% off Replacement Parts
+				</br>
+				20% off Ancillary Equipment Purchases
+				</br>
+				Guaranteed 4 hour Priority Service
+				</strong></p>
+				
+				
+				<p class="panel-footer fonts-body-ssm" style="background-color:#4587c7;margin:0px;color:#fff;">*subject to preinspection</p>	
+				
+			</div>
 			
+			
+	</div><!--Platinum-->
+				
+			
+
+		<!--footnotes-->
+<div class="col-sm-2">
+		</div>
+		
+	<div class="panel panel-warning col-sm-8" style="padding:20px;background-color:#efefef;opacity:.8;margin-top:20px;"> 
+			
+		<p class="fonts-body" style="">Want to learn more? Click the<strong> FAQs </strong>
+<span class="glyphicon glyphicon-search"></span> button below to discover more or the<strong> Contact </strong><span class="glyphicon glyphicon-phone"></span> button to get a hold of a CoolHeat Comfort Technician</p>		
+	</div><!--footnotes-->
+		
+		<div class="col-sm-1">
+		</div>
+		
+
+
+
+        
+		
+      </div><!--Maintenance End-->
+
+	  
+	  
+	  
+	
+	  
+	  
+	  
+	  <!--Services-->
+	  <div id="services" class="mainbox-dim bg-primary"style="width:100%; margin:0px;box-shadow: 0 0 50px rgba(0,0,0,0.8);">         
+        
+		<div class="col-sm-12" style="padding-bottom:20px;">
+			<h1 class="fonts-titles-lg">Reliable Quality Service</h1>
+			
+			
+			
+	<p class="fonts-body" style="padding-bottom:20px;">
+	Our CoolHeat Comfort Technicians are well versed in the Installation, Maintenance & Repairs of almost every Heating System out there. Below is a full list of our available Services.
+	</p>
+			
+			
+			
+			<div class="col-sm-8" style="padding-bottom:20px;">
+		
+		 
+		 
+		 
+		 <!--Panel Start-->
+		 <div class="panel panel-danger">
+		 
+		 <div class="panel-heading" style="">
+		 <h2 class="fonts-titles-sm"style=" text-align:center;padding:5px;padding-top:10px;padding-bottom:0px;color:#fff;">Residential Services</h2>
+		 </div>
+		
+		
+		
+		<div class="panel-body">
+		
+		<p class="col-sm-6 fonts-aster " style=" text-align:left;padding:15px;color:black;margin:0;">
+		
+		
+<span class="glyphicon glyphicon-asterisk"></span> Residential Heating & Cooling Service<br>
+<span class="glyphicon glyphicon-asterisk"></span> New Comfort Systems & Replacements<br>
+<span class="glyphicon glyphicon-asterisk"></span> Air Flow Balancing<br>
+<span class="glyphicon glyphicon-asterisk"></span> Humidity Control Solutions<br>
+<span class="glyphicon glyphicon-asterisk"></span> Air Conditioning Water Leaks<br>
+<span class="glyphicon glyphicon-asterisk"></span> Home Performance & Efficiency Test<br>
+<span class="glyphicon glyphicon-asterisk"></span> Residential HVAC Coil & Condensor Cleaning<br>
+<span class="glyphicon glyphicon-asterisk"></span> Tankless & Boiler System Flush<br>
+<span class="glyphicon glyphicon-asterisk"></span> HRV and ERV Installation and Service<br>
+<span class="glyphicon glyphicon-asterisk"></span> Raidiant in-floor Heating<br>
+<span class="glyphicon glyphicon-asterisk"></span> Duct Work and Cleaning<br>
+
+
+
+
+
+
+</p>
+
+
+
+
+<p class="col-sm-6 fonts-aster " style=" text-align:left;padding:15px;color:black;margin:0;">
+
+
+
+
+<span class="glyphicon glyphicon-asterisk"></span> Thermostat Installation, Service, & Repair<br>
+<span class="glyphicon glyphicon-asterisk"></span> Improving Indoor Air Quality Control<br>
+<span class="glyphicon glyphicon-asterisk"></span> Real Estate Inspections<br>
+<span class="glyphicon glyphicon-asterisk"></span> HVAC Tune Up & Inspection<br>
+<span class="glyphicon glyphicon-asterisk"></span> Refrigerant Leak Test & Top Up *cannot top up R22 (include link)<br>
+<span class="glyphicon glyphicon-asterisk"></span> Zoning Installation & Repair<br>
+<span class="glyphicon glyphicon-asterisk"></span> 24/7 Emergency Repair Services<br>
+<span class="glyphicon glyphicon-asterisk"></span> Ductless AC / Mini Split Service & Installation<br>
+
+
+<br>
+<br>
+<script>
+		<!--Hover Button-->
+		function hoverbbbCH(element) {
+    element.setAttribute('src', 
+         'img/bbb_CH.png'//Replace this part with the new button hover image
+         );
+}
+function unhoverbbbCH(element) {
+    element.setAttribute('src', 
+         'img/bbb.png'//Replace this part with the new button image
+         );
+		 }
+		 </script>
+		 <a href="http://www.bbb.org/ottawa/business-reviews/heating-and-air-conditioning/coolheat-comfort-systems-in-nepean-on-50451"><img class="center-block" alt="Better Business Bureau" src="img/bbb.png" onmouseover="hoverbbbCH(this)" onmouseout="unhoverbbbCH(this)" width="170px"></a>
+
+
+</p>
+
+
+</div>
+</div><!--Panel Fin-->
+
+
+</div>
+
+
+
+
+
+<div class="col-sm-4" style="padding-bottom:20px;">
+		<br><br><br><br><br>
+		<a href="services.html" ><img class="center-block img-responsive" src="img/staff.png"/></a>
+		
+		
+		
+		
+				</div>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+		</div>
+		
 		<p class="fonts-body">Want to learn more? Click the<strong> FAQs </strong>
 <span class="glyphicon glyphicon-search"></span> button below to discover more or the<strong> Contact </strong><span class="glyphicon glyphicon-phone"></span> button to get a hold of a CoolHeat Comfort Technician</p>
-
 		
-      </div>  
+      </div>    
 
 
+
+
+
+
+
+	  <!--Repairs-->
+      <div id="repairs" class="mainbox-dim bg-danger"style="width:100%; margin:0px;box-shadow: 0 0 50px rgba(0,0,0,0.8);">         
+        
+		<div class="col-sm-4 " >
+		</div>
+		
+		<div class="panel panel-danger col-sm-6" style="border:0px;opacity:.9;">
+			<h1 class="panel-heading fonts-titles-lg"style="padding:40px;color:#fff;">24/7 Emergency Repairs</h1>
+		 
+		 <div class="panel-body " style="border-radius:0px;border:0px;">
+		 
+		 <div class="col-sm-2" style="padding:20px;">
+		 <script>
+		 <!--Hover Button-->
+		function hoverProtectionIcon(element) {
+    element.setAttribute('src', 
+         'img/protection-icon.png'//Replace this part with the new button hover image
+         );
+}
+function unhoverProtectionIcon(element) {
+    element.setAttribute('src', 
+         'img/protection-icon-grey.png'//Replace this part with the new button image
+         );
+		 }
+		 </script>
+		 
+	<a href="air_conditioners.html" ><img class="center-block img-responsive" src="img/protection-icon-grey.png"  onmouseover="hoverProtectionIcon(this)" onmouseout="unhoverProtectionIcon(this)"/></a>
+        </div>
+		 
+		 <div class="col-sm-10" style="padding-bottom:20px;">
+	<p class="fonts-body" style="padding-top:20px; text-align:left;color:black;">
+	We're Available 24/7 for Emergency Repairs because you need your system fixed NOW!</p>
+        </div>
+		
+		
+		
+
+	
+	
+	</div>
+	
+	<div class="panel-footer " style="background-color:#ed2027;margin:auto;border:0px;">
+		
+	<p class="fonts-body" style="">
+	Click the<strong> Contact </strong><span class="glyphicon glyphicon-phone"></span> button below to get a hold of a CoolHeat Repair Technician ASAP!
+	</p></div>
+		</div>
+      </div>
+	  
+	  
+	  
+	  
+	  <!--Financing-->
+	  <div id="financing" class="mainbox-dim bg-danger"style="width:100%; margin:0px;box-shadow: 0 0 50px rgba(0,0,0,0.8);">         
+        <div class="col-sm-12" style="padding-bottom:20px;">
+			<h1 class="fonts-titles-lg">Big Purchases made Affordable</h1>
+		 
+		 
+		 
+		 <div class="col-sm-12" style="padding-bottom:20px;">
+	<p class="fonts-body" style="padding-bottom:20px; ">
+	Surprise! Your Furnace is making a weird noise and might be broken. It could need replacing but like most of us you don't have that kind of cash just lying around. Financing with FinanceIt will allow us to put the right Comfort System in your home for a competitive price. CoolHeat works closely with lenders to make sure that you are easily approved for an afforable monthly payment! Our Financing options can even help restore and rebuild poor credit ratings. Click the button below to learn more about getting a loan with our partner FinanceIt.</p>
+	
+        </div>
+		
+		<div class="col-sm-12 center-block" style="padding-bottom:20px;">
+		 
+		 <script>
+		 <!--Hover Button-->
+		function hoverFinanceIt(element) {
+    element.setAttribute('src', 
+         'img/FinanceIt_logo.png'//Replace this part with the new button hover image
+		 
+         );
+}
+function unhoverFinanceIt(element) {
+    element.setAttribute('src', 
+         'img/FinanceIt_logo_blue.png'//Replace this part with the new button image
+         );
+}
+		 </script>
+		 
+	<a href="https://www.financeit.ca/s/wEUHeg" target="_blank"><button class="btn btn-default center-block" style="-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+          box-shadow: 0 6px 12px rgba(0, 0, 0, .175);"><span style="font-size:20px;"class="glyphicon glyphicon-usd"></span><span><img  src="img/FinanceIt_logo_blue.png" style="height:50px;  margin:-10px;" onmouseover="hoverFinanceIt(this)" onmouseout="unhoverFinanceIt(this)"/></span></button></a>
+        
+		 </div>
+		
+		</div>
+		
+		<p class="fonts-body" style="padding-bottom:20px;">
+
+	
+	<p class="fonts-body">Want to learn more? Click the<strong> FAQs </strong>
+<span class="glyphicon glyphicon-search"></span> button below to discover more or the<strong> Contact </strong><span class="glyphicon glyphicon-phone"></span> button to get a hold of a CoolHeat Comfort Technician</p>
+	
+	
+	
+	</p>
+		
+      </div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	  <!--About-->
+	  <div id="about" class="mainbox-dim bg-primary"style="width:100%; margin:0px;box-shadow: 0 0 50px rgba(0,0,0,0.8);">         
+        
+		<div class="col-sm-12" style="padding-bottom:20px;">
+			<h1 class="fonts-titles-lg"style="padding-bottom:0px;">We'll Make Time Just for You.</h1>
+			
+			
+			
+	<p class="fonts-body" style="padding-bottom:10px;">Speak with a CoolHeat Comfort Technician whenever you need one!
+	</p>
+			
+			
+			
+			
+			<!--PANEL-->
+			<div class="col-sm-6" style="">
+		 
+		 <!--Panel Start-->
+		 <div class="panel panel-danger" style="margin:0px;">
+		 
+		 <div class="panel-heading" style="">
+		 <h2 class="fonts-titles-lg"style=" text-align:center;padding:5px;padding-top:10px;padding-bottom:10px;color:#fff;">Contact Us</h2>
+		 </div>
+		
+		
+		<!--Panel Body-->
+		<div class="panel-body" style="padding:0px;border:0px;">
+		
+		<a href="tel:613-366-1200"><button class="btn-primary col-sm-6 fonts-aster " style=" text-align:center;padding:15px;color:#fff;margin:0;background-color:#dddddd;border:0px;">
+		
+		
+<span class="glyphicon glyphicon-phone"></span> Phone<br>
+<span class="fonts-footer-ssm" style="color:#fff;"><strong>(613) 366-1200</strong></span><br>
+
+</button></a>
+
+
+
+
+<a href="#" data-toggle="collapse" data-target="#myModal2"><button class="btn-primary col-sm-6 fonts-aster " style=" text-align:center;padding:15px;color:#fff;margin:0;border:0px;">
+
+<span class="glyphicon glyphicon-envelope"></span> Email<br>
+<span class="fonts-footer-ssm" style="color:#fff;"><strong>sales@coolheatcomfort.ca</strong></span><br>
+
+
+</button></a>
+
+
+		</div><!--Panel Body-->
+		
+	<!--Panel Footer-->
+		<div class="panel-footer" style="background-color:#ed2027">
+		
+<p class="fonts-body-ssm">Click the <span class="glyphicon glyphicon-phone"></span> Phone Button Above to Call us ASAP or the <span class="glyphicon glyphicon-envelope"></span> Email Button to give us a more detailed message.  </p>
 
 	  
-      <div id="maintenance" class="mainbox-dim ">         
-        
+		</div><!--Panel Footer-->
+		
+		</div><!--Panel Fin-->
+
+			</div>
+			
+			
+
+	  
+	  
+	  
+	  
+	  
+
+<div class="col-sm-1">
+			
+			</div>
+
+<div class="col-sm-3" style="padding-bottom:20px;">
+		
+		<a href="services.html" ><img class="center-block img-responsive" src="img/staff.png"/></a>
+		
+
+
+		
 		
 		
 		<script>
-		 <!--Hover Button-->
-		function hoverProtectionIcon(element) {
-    element.setAttribute('src', 
-         'img/protection-icon.png'//Replace this part with the new button hover image
-         );
-}
-function unhoverProtectionIcon(element) {
-    element.setAttribute('src', 
-         'img/protection-icon-grey.png'//Replace this part with the new button image
-         );
-		 }
-		 </script>
+$(document).ready(function(){
+  $("#aboutus").on("hide.bs.collapse", function(){
+    $(".btn2").html('<span class="glyphicon glyphicon-collapse-down"></span> Open Map');
+  });
+  $("#aboutus").on("show.bs.collapse", function(){
+    $(".btn2").html('<span class="glyphicon glyphicon-collapse-up"></span> Close Map');
+  });
+});
+</script>
+
+<button type="button" class="btn2 btn-success" data-toggle="collapse" data-target="#aboutus" style="width:100%;border-radius:30px;">
+      <span class="glyphicon glyphicon-collapse-down"></span> Open Map
+    </button>
+
+
 		
 		
-		
-		
-		<div class="col-sm-12" style="padding-bottom:20px;">
-			<h1 class="fonts-titles-lg">Maintenace Plans</h1>
-		 
-		 <div class="col-sm-4" >
-		 <p class="fonts-body" style="padding-bottom:20px; text-align:left;">Learn what it means to properly Maintain your Heating System.
-		 </div>
-		 <div class="col-sm-4" style="padding-bottom:20px;">
-		 
-		 
-	<a href="air_conditioners.html" ><img class="center-block" src="img/protection-icon-grey.png" style="height:125px; width:rheight; " onmouseover="hoverProtectionIcon(this)" onmouseout="unhoverProtectionIcon(this)"/></a>
-        </div>
-		 
-		 <div class="col-sm-4" style="padding-bottom:20px;">
-	<p class="fonts-body" style="padding-bottom:20px; text-align:left;">
-	We're Available 24/7 for Emergency Repairs because you need your heat fixed NOW!</p>
-        </div>
+				</div>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
 		</div>
 		
-		<p class="fonts-body" style="padding-bottom:20px;">
-
-	
-	Click the<strong> Contact </strong><span class="glyphicon glyphicon-phone"></span> button below to get a hold of a CoolHeat Repair Technician ASAP!
-	
-	
-	
-	</p>
+		<p class="fonts-body">Want to learn more? Click the<strong> FAQs </strong>
+<span class="glyphicon glyphicon-search"></span> button below to discover more or the<strong> Contact </strong><span class="glyphicon glyphicon-phone"></span> button to get a hold of a CoolHeat Comfort Technician</p>
 		
-      </div>
+      </div>    
 
 
-
-
-
+		
+		
+		
+		
+		
+		
+	
 	  
-      <div id="repairs" class="mainbox-dim ">         
-        <div class="col-sm-12" style="padding-bottom:20px;">
-			<h1 class="fonts-titles-lg">24/7 Emergency Repairs</h1>
-		 
-		 <div class="col-sm-1" >
-		 </div>
-		 <div class="col-sm-2" style="padding-bottom:20px;">
-		 <script>
-		 <!--Hover Button-->
-		function hoverProtectionIcon(element) {
-    element.setAttribute('src', 
-         'img/protection-icon.png'//Replace this part with the new button hover image
-         );
-}
-function unhoverProtectionIcon(element) {
-    element.setAttribute('src', 
-         'img/protection-icon-grey.png'//Replace this part with the new button image
-         );
-		 }
-		 </script>
-		 
-	<a href="air_conditioners.html" ><img class="center-block" src="img/protection-icon-grey.png" style="height:125px; width:rheight; " onmouseover="hoverProtectionIcon(this)" onmouseout="unhoverProtectionIcon(this)"/></a>
-        </div>
-		 
-		 <div class="col-sm-8" style="padding-bottom:20px;">
-	<p class="fonts-body" style="padding-bottom:20px; text-align:left;">
-	We're Available 24/7 for Emergency Repairs because you need your heat fixed NOW!</p>
-        </div>
-		</div>
+      <!--Toggled Map-->
+	  <div id="aboutus" class="collapse mainbox-dim "style="width:100%; margin:0px;padding:0px;">         
+        
 		
-		<p class="fonts-body" style="padding-bottom:20px;">
-
-	
-	Click the<strong> Contact </strong><span class="glyphicon glyphicon-phone"></span> button below to get a hold of a CoolHeat Repair Technician ASAP!
-	
-	
-	
-	</p>
+		
+		
+	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2804.60936453395!2d-75.71879538489716!3d45.336510149976405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cce07b8f8fefb9d%3A0xaa6315d76a18f218!2sCoolHeat+Comfort+Systems!5e0!3m2!1sen!2sca!4v1459144601809" frameborder="0" style="border:0;width:100%;height: 400px;margin:0px;z-index:1px;" allowfullscreen></iframe>
+		
+		
 		
       </div>
-	  <div id="financing" class="mainbox-dim ">         
-        <div class="col-sm-12" style="padding-bottom:20px;">
-			<h1 class="fonts-titles-lg">Big Purchases made Affordable</h1>
-		 
-		 
-		 
-		 <div class="col-sm-12" style="padding-bottom:20px;">
-	<p class="fonts-body" style="padding-bottom:20px; ">
-	Surprise! Your Furnace might be broken and could need replacing but like most of us you don't have that kind of cash just lying around. Financing with FinanceIt will allow us to put the right Comfort System in your home for a competitive price. CoolHeat works closely with lenders to make sure that you are easily approved for an afforable monthly payment! Our Financing options can even help restore and rebuild poor credit ratings. Click the button below to learn more about getting a loan with our partner FinanceIt.</p>
-	
-        </div>
-		
-		<div class="col-sm-5 center-block" style="padding-bottom:20px;">
-		 </div>
-		 <div class="col-sm-1 " style="padding-bottom:20px; ">
-		 <script>
-		 <!--Hover Button-->
-		function hoverFinanceIt(element) {
-    element.setAttribute('src', 
-         'img/FinanceIt_logo.png'//Replace this part with the new button hover image
-		 
-         );
-}
-function unhoverFinanceIt(element) {
-    element.setAttribute('src', 
-         'img/FinanceIt_logo_blue.png'//Replace this part with the new button image
-         );
-}
-		 </script>
-		 
-	<a href="https://www.financeit.ca/s/wEUHeg" target="_blank"><button class="btn btn-default" style="-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
-          box-shadow: 0 6px 12px rgba(0, 0, 0, .175);"><span style="font-size:20px;"class="glyphicon glyphicon-usd"></span><span><img  src="img/FinanceIt_logo_blue.png" style="height:50px;  margin:-10px;" onmouseover="hoverFinanceIt(this)" onmouseout="unhoverFinanceIt(this)"/></span></button></a>
-        </div>
-		 
-		 <div class="col-sm-4 center-block" style="padding-bottom:20px;">
-		 </div>
-		
-		</div>
-		
-		<p class="fonts-body" style="padding-bottom:20px;">
-
-	
-	<p class="fonts-body">Want to learn more? Click the<strong> FAQs </strong>
-<span class="glyphicon glyphicon-search"></span> button below to discover more or the<strong> Contact </strong><span class="glyphicon glyphicon-phone"></span> button to get a hold of a CoolHeat Comfort Technician</p>
+	  
+	  
 	
 	
 	
-	</p>
-		
-      </div>
-		
-		
-		
-		
-		  <div id="hotstuff" class="mainbox-dim ">         
-        <div class="col-sm-12" style="padding-bottom:20px;">
-			<h1 class="fonts-titles-lg">Big Purchases made Affordable</h1>
-		 
-		 
-		 
-		 <div class="col-sm-12" style="padding-bottom:20px;">
-	<p class="fonts-body" style="padding-bottom:20px; ">
-	Surprise! Your Furnace might be broken and could need replacing but like most of us you don't have that kind of cash just lying around. Financing with FinanceIt will allow us to put the right Comfort System in your home for a competitive price. CoolHeat works closely with lenders to make sure that you are easily approved for an afforable monthly payment! Our Financing options can even help restore and rebuild poor credit ratings. Click the button below to learn more about getting a loan with our partner FinanceIt.</p>
-	
-        </div>
-		
-		<div class="col-sm-5 center-block" style="padding-bottom:20px;">
-		 </div>
-		 <div class="col-sm-1 " style="padding-bottom:20px; ">
-		 <script>
-		 <!--Hover Button-->
-		function hoverFinanceIt(element) {
-    element.setAttribute('src', 
-         'img/FinanceIt_logo.png'//Replace this part with the new button hover image
-		 
-         );
-}
-function unhoverFinanceIt(element) {
-    element.setAttribute('src', 
-         'img/FinanceIt_logo_blue.png'//Replace this part with the new button image
-         );
-}
-		 </script>
-		 
-	<a href="https://www.financeit.ca/s/wEUHeg" target="_blank"><button class="btn btn-default" style="-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
-          box-shadow: 0 6px 12px rgba(0, 0, 0, .175);"><span style="font-size:20px;"class="glyphicon glyphicon-usd"></span><span><img  src="img/FinanceIt_logo_blue.png" style="height:50px;  margin:-10px;" onmouseover="hoverFinanceIt(this)" onmouseout="unhoverFinanceIt(this)"/></span></button></a>
-        </div>
-		 
-		 <div class="col-sm-4 center-block" style="padding-bottom:20px;">
-		 </div>
-		
-		</div>
-		
-		<p class="fonts-body" style="padding-bottom:20px;">
-
-	
-	<p class="fonts-body">Want to learn more? Click the<strong> FAQs </strong>
-<span class="glyphicon glyphicon-search"></span> button below to discover more or the<strong> Contact </strong><span class="glyphicon glyphicon-phone"></span> button to get a hold of a CoolHeat Comfort Technician</p>
-	
-	
-	
-	</p>
-		
-      </div>
-		
-		
-
-    
-  
-
-
-
-
- 
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-
-		
 		
 		
 		
@@ -1201,6 +1734,10 @@ function unhoverFinanceIt(element) {
 					
 					
 						<div class="col-sm-3">
+						
+						
+						
+						
 							<ul class="social-links ">
 								<a href="https://www.facebook.com/CoolheatComfortSystems" target="_blank"><img src="img/icon-facebook-grey.png" class="" style="max-height:50px;"onmouseover="hoverFacebook(this)" onmouseout="unhoverFacebook(this)"></a>
 								<a href="https://twitter.com/CoolHeatComfort" target="_blank"><img src="img/icon-twitter-grey.png" class="" style="max-height:50px;" onmouseover="hoverTwitter(this)" onmouseout="unhoverTwitter(this)"></a>
@@ -1290,11 +1827,10 @@ function unhoverFooterLogo(element) {
 		<!--FOOTER-->
 		
 		
-		
       </div>
     </div>
 	
-	</div>
+	
 </div>
 	
   </div>
