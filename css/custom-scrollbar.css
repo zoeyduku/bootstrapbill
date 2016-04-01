@@ -1,0 +1,86 @@
+::-webkit-scrollbar              { /* 1 */ }
+::-webkit-scrollbar-button       { /* 2 */ }
+::-webkit-scrollbar-track        { /* 3 */ }
+::-webkit-scrollbar-track-piece  { /* 4 */ }
+::-webkit-scrollbar-thumb        { /* 5 */ }
+::-webkit-scrollbar-corner       { /* 6 */ }
+::-webkit-resizer                { /* 7 */ }
+
+
+
+
+::-webkit-scrollbar {
+    width: 15px;
+	
+	z-index:2;
+	border-radius: ;
+	
+
+	
+	
+	
+	 background-image: -webkit-linear-gradient(top, #fdfdfd 0%, #fdfdfc 100%);
+  background-image:      -o-linear-gradient(top, #fdfdfd 0%, #fdfdfc 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fdfdfd), to(#fdfdfc));
+  background-image:         linear-gradient(to bottom, #fdfdfd 0%, #fdfdfc 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffdfdfd', endColorstr='#fffdfdfc', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  background-repeat: repeat-x;
+  
+	
+	
+  
+	
+}
+ 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+	background-color:#fff;margin-top:90px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+		background-color:#4587c7;
+}
+
+
+
+
+div::-webkit-scrollbar {
+    width: 10px;
+	
+	z-index:2;
+	border-radius: 30px;
+	
+	
+	
+	
+	
+	
+	 background-image: -webkit-linear-gradient(top, #fdfdfd 0%, #fdfdfc 100%);
+  background-image:      -o-linear-gradient(top, #fdfdfd 0%, #fdfdfc 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fdfdfd), to(#fdfdfc));
+  background-image:         linear-gradient(to bottom, #fdfdfd 0%, #fdfdfc 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffdfdfd', endColorstr='#fffdfdfc', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  background-repeat: repeat-x;
+  overflow:hidden;
+	
+	
+  
+	
+}
+ 
+div::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+	background-color:#fff;margin-top:0px;
+}
+ 
+div::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+		background-color:#4587c7;
+}

@@ -605,5 +605,25 @@ footer .container {
 */
 
 
+/*Centered on phone to right on computer START
+*/
+.fonts-center-to-right > h1
+{
+	text-align:center;
+}
+
+@media (min-width: 768px) 
+{
+	.fonts-center-to-right > h1
+		{
+			text-align:right;
+		}
+}
+
+
+
+
+/*Centered on phone to right on computer FIN
+*/
 
 
